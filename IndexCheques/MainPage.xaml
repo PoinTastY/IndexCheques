@@ -24,6 +24,14 @@
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
+            <ListView ItemsSource="{Binding Documents}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding CRAZONSOCIAL}" Detail="{Binding CFECHA}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
             <Button
                 x:Name="CounterBtn"
                 Text="Click me" 

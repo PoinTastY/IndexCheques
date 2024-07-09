@@ -1,12 +1,25 @@
-﻿namespace IndexCheques
+﻿using IndexCheques.Presentation.ViewModels;
+
+namespace IndexCheques
 {
     public partial class MainPage : ContentPage
     {
         int count = 0;
 
-        public MainPage()
+        private readonly DocumentsViewModel _viewModel;
+
+        public MainPage(DocumentsViewModel viewModel)
         {
             InitializeComponent();
+
+            BindingContext = _viewModel = viewModel;
+        }
+
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await _viewModel.LoadDocumentsAsync(new DateTime(2024, 02, 19), DateTime.Now, "4", "F");
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
