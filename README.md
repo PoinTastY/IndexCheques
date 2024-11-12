@@ -1,0 +1,1 @@
+This is a .Net MAUI app to check documents form a sql database and display the document info (filtered for the checking documents) and display the check template with the customer required info, so it can be printed to a serial matrix printer
